@@ -12,8 +12,7 @@ You should write the target list in the script like the following:
 
 ```
 target = [
-    '.ssh/config',
-    '.ssh/keys',
+    '.ssh',
     '.zshrc',
     '.gitconfig'
 ]
