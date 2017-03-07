@@ -4,16 +4,16 @@ import glob
 
 
 def main():
-    target = glob.glob('.*')
+    targets = glob.glob('.*')
     current_dir = os.path.dirname(os.path.abspath(__file__))
     home_dir = os.path.expanduser('~')
 
-    for t in target:
-        src = current_dir + '/' + t
-        dst = home_dir + '/' + t
+    for target in targets:
+        src = f"{current_dir}/{target}"
+        dst = f"{home_dir}/{target}"
 
         if os.path.lexists(dst):
-            print(dst + ' already exists.\nOverwrite (y/N)? ', end='')
+            print(f"{dst} already exists.\nOverwrite (y/N)? ", end='')
             if input().strip() in ['y', 'Y']:
                 if os.path.isfile(dst) and not os.path.islink(dst):
                     os.remove(dst)
@@ -21,11 +21,10 @@ def main():
                     shutil.rmtree(dst)
                 elif os.path.islink(dst):
                     os.unlink(dst)
-
             else:
                 continue
 
-        print(dst + ' -> ' + src)
+        print(f"{dst} -> {src}")
         os.symlink(src, dst)
 
 
