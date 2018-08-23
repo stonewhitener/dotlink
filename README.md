@@ -1,4 +1,4 @@
-# autolink
+# dotlink
 
 A dotfile management tool with online storage
 
@@ -11,10 +11,10 @@ A dotfile management tool with online storage
 ## Usage
 
 1. Create a `dotfiles` directory in your online storage directory
-2. Put your dotfiles and this script `autolink` into the `dotfiles` directory
+2. Put your dotfiles and this script `dotlink` into the `dotfiles` directory
 3. Run:
 
 ```
-chmod +x autolink
-./autolink
+chmod +x dotlink
+./dotlink
 ```
